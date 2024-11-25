@@ -25,7 +25,7 @@ CREATE TABLE cliente (
     FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
 );
 
--- Tabela de Produtos (pratos e bebidas)
+-- Tabela de Produtos 
 CREATE TABLE produto (
     id_produto INT PRIMARY KEY AUTO_INCREMENT,
     nome_produto VARCHAR(100) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE produto (
     marca VARCHAR(255)
 );
 
--- Tabela de Pedidos (por cliente)
+-- Tabela de Pedidos 
 CREATE TABLE pedido (
     id_pedido INT PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT,
@@ -75,13 +75,13 @@ INSERT INTO funcionario (nome_funcionario) VALUES
 
 -- Populando a tabela de Clientes
 INSERT INTO cliente (nome, cpf, id_mesa, id_funcionario) VALUES 
-('Ana Silva', '123.456.789-00', 2, 1),       -- João atende Ana
-('Carlos Pereira', '987.654.321-00', 2, 2),  -- Maria atende Carlos
-('Mariana Souza', '111.222.333-44', 3, 3),   -- Carlos atende Mariana
-('Bruno Lima', '555.666.777-88', 4, 4),      -- Ana Paula atende Bruno
-('Luciana Mendes', '999.888.777-66', 6, 5),  -- Pedro atende Luciana
-('Fernando Costa', '444.333.222-11', 1, 3),  -- Carlos atende Fernando
-('Sofia Gomes', '222.111.000-99', 3, 1);     -- João atende Sofia
+('Ana Silva', '123.456.789-00', 2, 1),       
+('Carlos Pereira', '987.654.321-00', 2, 2),  
+('Mariana Souza', '111.222.333-44', 3, 3),   
+('Bruno Lima', '555.666.777-88', 4, 4),     
+('Luciana Mendes', '999.888.777-66', 6, 5),  
+('Fernando Costa', '444.333.222-11', 1, 3), 
+('Sofia Gomes', '222.111.000-99', 3, 1);    
 
 -- Populando a tabela de Produtos (Pratos e Bebidas)
 INSERT INTO produto (nome_produto, preco, tipo, estoque_minimo, marca) VALUES 
@@ -94,14 +94,14 @@ INSERT INTO produto (nome_produto, preco, tipo, estoque_minimo, marca) VALUES
 
 -- Populando a tabela de Pedidos
 INSERT INTO pedido (id_cliente, id_produto, quantidade) VALUES 
-(1, 1, 2),  -- Ana pediu 2 Pizzas
-(1, 2, 3),  -- Ana pediu 3 Refrigerantes
-(2, 3, 1),  -- Carlos pediu 1 Lasanha
-(3, 4, 2),  -- Mariana pediu 2 Sucos de Laranja
-(4, 5, 1),  -- Bruno pediu 1 Espaguete
-(5, 6, 2),  -- Luciana pediu 2 Águas
-(6, 1, 1),  -- Fernando pediu 1 Pizza
-(7, 2, 2);  -- Sofia pediu 2 Refrigerantes
+(1, 1, 2),  
+(1, 2, 3),  
+(2, 3, 1),  
+(3, 4, 2),  
+(4, 5, 1),  
+(5, 6, 2),  
+(6, 1, 1),  
+(7, 2, 2);  
 
 -- Populando a tabela de Pagamentos
 INSERT INTO pagamento (id_cliente, totalPagamento, formaDePagamento) VALUES 
